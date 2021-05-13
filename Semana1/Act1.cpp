@@ -38,6 +38,108 @@ string GETDATE(){
 }
 
 
+
+Vendedor vendedores[10];
+int lenInventarios = 10;
+Inventario inventarios[10];
+Factura facturas[100];
+int cont = 0;
+
+void GenerarFactura();
+void menu();
+void nuevoVendedor();
+void nuevoArticulo();
+void imprimirSistema();
+void pause();
+
+int main(){
+    system("cls");
+    
+    menu();
+
+    return 0;
+}
+
+void menu(){
+    cout<<"==SISTEMA DE FACTURAS=="<<endl;
+    cout<<"\t1. Ingresar vendedor"<<endl;
+    cout<<"\t2. Ingresar articulo"<<endl;
+    cout<<"\t3. Imprimir vendedores y articulos"<<endl;
+    cout<<"\t0. Salir"<<endl;
+    int op;
+    cout<<"Ingrese numero de seleccion: ";cin>>op;
+    switch (op)
+    {
+        case 1:
+            nuevoVendedor();
+            break;
+        case 2:
+            nuevoArticulo();
+            break;
+        case 3:
+            imprimirSistema();
+            break;       
+        case 0:
+            exit(1);
+            break;         
+        default:
+            cout<<"\n\nFavor de ingresar un numero disponible (1-3)";
+            break;
+    }
+}
+
+
+
+int iv = 0;
+int lenVendedores = sizeof(vendedores)/sizeof(*vendedores);
+void nuevoVendedor(){
+    system("cls");
+    cout<<"==Crear nuevo Vendedor";
+    cout<<"\nEspacios disponibles: "<<lenVendedores-iv<<"/"<<lenVendedores<<endl;
+    
+    Vendedor nuevo;
+    
+    string clave;
+    cout<<"\n\tIngrese clave de vendedor:";
+    cin>>clave;
+
+    string nombre;
+    cout<<"\n\tIngrese primer nombre: ";
+    cin>>nombre;
+    string apellido;
+    cout<<"\n\tIngrese primer apellido: ";
+    cin>>apellido;
+    string nombreCompleto = nombre + " " + apellido;
+
+    vendedores[iv].Cve_Vendedor = clave;
+    vendedores[iv].Nombre = nombreCompleto;
+    cout<<"Vendedor " << vendedores[iv].Nombre <<" agregado a sistema.\n\n";
+    iv++;
+    system("PAUSE");
+    main();
+}
+
+int ii = 0;
+int lenInventarios = sizeof(inventarios)/sizeof(*inventarios);
+void nuevoArticulo(){
+    system("cls");
+    cout<<"==Crear nuevo Articulo";
+    cout<<"\nEspacios disponibles: "<<lenInventarios-ii<<"/"<<lenInventarios<<endl;
+}
+
+void imprimirSistema(){
+    system("cls");
+    cout<<"==Imprimir Sistema"<<endl;
+    cout<<"\n=Vendedores: "<<endl;
+    for (int i = 0; i < iv; i++)
+    {
+        cout<<"\tVendedor "<<i+1<<".\n";
+        cout<<"\t-Clave: "<<vendedores[i].Cve_Vendedor<<endl;
+        cout<<"\t-Nombre: "<<vendedores[i].Nombre<<"\n\n";
+    }
+    
+}
+
 void GeneraFactura(int cont, Factura factura[], Vendedor vendedor, Inventario inventario,int Cant){
     Factura newF;
     newF.NoFactura = "F"+GETDATE();
@@ -48,14 +150,7 @@ void GeneraFactura(int cont, Factura factura[], Vendedor vendedor, Inventario in
     factura[cont] = newF;
 }
 
-int main(){
-    system("cls");
-
-
-    Vendedor vendedores[2];
-    Inventario inventarios[3];
-    Factura facturas[2];
-
+/*void load(){
     Vendedor aux;
     aux = {"V152","Jeremias Springfield"};
     vendedores[0] = aux;
@@ -71,17 +166,5 @@ int main(){
     auxI = {"i231","Tornillo buen fin",421.23};
     inventarios[2] = auxI;
     
-    int cont = 0;
     GeneraFactura(cont, facturas,vendedores[1],inventarios[2],14);
-
-    for(int i=0;i<cont+1;i++){
-        Factura current = facturas[i];
-        cout<<"=Factura #"<<current.NoFactura<<endl;
-        cout<<"\tVendedor: "<<current.VendedorF.Nombre<<" ("<<current.VendedorF.Cve_Vendedor<<")"<<endl;
-        cout<<"\tArticulo: "<<current.InventarioF.Descripcion<<" ("<<current.InventarioF.Cve_Articulo<<")"<<endl;
-        cout<<"\tCantidad: "<<current.Cantidad<<endl;
-        cout<<"\tTotal:    $"<<current.Total<<endl;
-    }
-    
-    return 0;
-}
+}*/
