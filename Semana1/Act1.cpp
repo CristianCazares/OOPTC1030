@@ -60,8 +60,8 @@ void imprimirSistema();
 void pause();
 
 int main(){
-    system("clear");
-    
+    system("cls");
+
     menu();
 
     return 0;
@@ -100,7 +100,7 @@ void menu(){
 int iv = 0;
 int lenVendedores = sizeof(vendedores)/sizeof(*vendedores);
 void nuevoVendedor(){
-    system("clear");
+    system("cls");
     cout<<"==Crear nuevo Vendedor";
     cout<<"\nEspacios disponibles: "<<lenVendedores-iv<<"/"<<lenVendedores<<endl;
     
@@ -129,7 +129,7 @@ void nuevoVendedor(){
 int ii = 0;
 int lenInventarios = sizeof(inventarios)/sizeof(*inventarios);
 void nuevoArticulo(){
-    system("clear");
+    system("cls");
     cout<<"==Crear nuevo Articulo";
     cout<<"\nEspacios disponibles: "<<lenInventarios-ii<<"/"<<lenInventarios<<endl;
 
@@ -160,7 +160,7 @@ void nuevoArticulo(){
 
 
 void imprimirSistema(){
-    system("clear");
+    system("cls");
     cout<<"==Imprimir Sistema"<<endl;
     cout<<"\n=Vendedores: "<<endl;
     if (iv <= 0) {
