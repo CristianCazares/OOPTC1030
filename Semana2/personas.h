@@ -4,9 +4,8 @@
 using namespace std;
 
 void clear();
-
+void pause();
 //
-
 class Persona{
     public:
         Persona();
@@ -35,8 +34,8 @@ int     Persona::getEdad(){return edad;}
 
 
 
-//
 
+//
 class Estudiante: public Persona{
     public:
         Estudiante();
@@ -68,6 +67,8 @@ string  Estudiante::getCarrera(){return carrera;}
 
 
 
+
+//
 class Maestro: public Persona{
     public:
         Maestro();
@@ -81,7 +82,6 @@ class Maestro: public Persona{
         string depto;
 
 };
-
 Maestro::Maestro() :Persona(){
     nombre = "SIN NOMBRE";
     edad = 0;
@@ -92,7 +92,6 @@ Maestro::Maestro(string Nombre, string Depto, int Edad) : Persona(Nombre,Edad){
     edad = Edad;
     depto = Depto;
 }
-
 void Maestro::show(){
     cout<<"Nombre: "<<nombre<<endl;
     cout<<"Departamento: "<<depto<<endl;
@@ -101,6 +100,13 @@ void Maestro::show(){
 void    Maestro::setDepto(string Depto){depto = Depto;}
 string  Maestro::getDepto(){return depto;}
 
+
+
+
+
 void clear(){
     if (system("CLS")) system("clear");
+}
+void pause(){
+    cout<<"Press ENTER key to continue . . ."; cin.get();
 }

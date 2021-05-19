@@ -33,7 +33,7 @@ int main(){
 
 
 
-    system("PAUSE");
+    pause();
     return 0;
 }
 
