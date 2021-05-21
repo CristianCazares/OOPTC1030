@@ -2,7 +2,11 @@
 #include "operacion.h"
 using namespace std;
 
-class Multiplicacion:public Operacion{
+class Multiplica:public Operacion{
     public:
         void operar();
 };
+
+void Multiplica::operar(){
+    resultado = valor1*valor2;
+}
