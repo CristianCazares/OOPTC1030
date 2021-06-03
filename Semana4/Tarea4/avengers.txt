@@ -4,13 +4,13 @@ H,Anthony Stark,Iron Man,M,Estados Unidos,Rojo,Dorado,Vuelo,Fuerza,Lsers
 H,Clint Barton,Hawkeye,M,Estados Unidos,Azul,Rojo,Punteria,Agilidad ,Combate
 H,Bruce Banner,Hulk,M,Estados Unidos,Verde,Morado,Fuerza,Salto,Resistencia
 H,Peter Parker,Spider-Man,M,Estados Unidos,Rojo,Azul,Fuerza,Lanza telaranias,Trepamuros
-A,Groot,Goot,M,Planeta X,Café,Verde,Fuerza,Extension de extremidades,Resistencia
+A,Groot,Groot,M,Planeta X,Cafe,Verde,Fuerza,Extension de extremidades,Resistencia
 A,Loki Odinson,Loki,M,Asgard,Negro,Verde,Fuerza,Magia,Cambia formas
 A,Thor Odinson,Thor,M,Asgard,Gris,Rojo,Control de rayos,Fuerza,Vuelo
 H,Natasha Romanoff,Black Widow,F,Rusia,Negro,Rojo,Agilidad,Combate,
 H,Hope Van Dyne,Wasp,F,Estados Unidos,Azul,Gris,Vuelo,Encogimiento,Control de insectos
 H,Wanda Maximoff,Scarlett Witch,F,Sokovia,Rojo,Negro,Magia,Vuelo,Telequinesis
-H,Aja-Adanna,Shuri,F,Wakanda,Azul,Café,Inteligencia,,
+H,Aja-Adanna,Shuri,F,Wakanda,Azul,Cafe,Inteligencia,,
 H,Carol Danvers,Captain Marvel,F,Estados Unidos,Azul,Rojo,Fuerza,Vuelo,Manipulacion de energia
 A,Gamora Ben Titan,Gamora,F,Zen-Whoberi,Verde,Negro,Fuerza,Agilidad,Curacion
 A,Brunnhilde,Valkyrie,F,Asgard,Blanco,Dorado,Fuerza,Agilidad,Combate

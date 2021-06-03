@@ -5,6 +5,7 @@
 #include "loadAvengers.h"
 #include "aliens.h"
 #include "humans.h"
+#include "questions.h"
 using namespace std;
 
 void clear();
@@ -19,7 +20,7 @@ int main(){
     mainScreen();
     pause("\t->ENTER para continuar. . .");
     cout<<"Continuamos\n";
-    
+
 
 
 
@@ -40,7 +41,7 @@ void mainScreen(){
         cout<<"    "<<count<<".-"<<Aliens[i].getAlias()<<endl;
         count++;
     }
-    cout<<"Piensa en el que creas mejor para tu mision y te hare unas preguntas al respecto...\n";
+    cout<<"Piensa en el que creas mejor para tu mision y te hare preguntas al respecto...\n";
 }
 
 
