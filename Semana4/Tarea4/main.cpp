@@ -18,14 +18,32 @@ int main(){
     clear();
     load();
     mainScreen();
-    pause("\t->ENTER para continuar. . .");
-    cout<<"Continuamos\n";
+    pause("\t->Continuar. . .");
+    clear();
+    cout<<"Veo que ya tienes a tu Vengador escogido... Vamos a las preguntas.\n";
+    pause("\t->Continuar. . .");
+    cout<<"Es importante responder de la siguiente manera:\n    1=\"Si\" 0=\"No\"\n";
+    pause("\t->Continuar. . .");
+    clear();
+
+    Question q;
+    q.askPlanet();
+    clear();
+    q.showOptions();
+    //pause();
+    pause("\t->Siguiente pregunta. . .");
+
+    q.askGender();
+    clear();
+    q.showOptions();
+    //pause();
+    pause("\t->Siguiente pregunta. . .");
+
+    q.askLocation();
 
 
 
-
-
-
+    pause();
     return 0;
 }
 
@@ -41,7 +59,7 @@ void mainScreen(){
         cout<<"    "<<count<<".-"<<Aliens[i].getAlias()<<endl;
         count++;
     }
-    cout<<"Piensa en el que creas mejor para tu mision y te hare preguntas al respecto...\n";
+    cout<<"Piensa en el que creas mejor para tu mision y te haré preguntas al respecto...\n";
 }
 
 
@@ -49,9 +67,10 @@ void clear(){
     if (system("CLS")) system("clear");
 }
 void pause(){
-    cout<<"Press ENTER key to continue . . ."; cin.get();
+    cout<<"Press ENTER key to continue . . ."; cin.get(); cin.ignore();
 }
 void pause(string msg){
-    cout<<msg; cin.get();
+    cout<<msg<<"\t(Enter)";
+    fflush(stdin);cin.get();
     cout<<"\n\n";
 }

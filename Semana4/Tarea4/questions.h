@@ -2,6 +2,7 @@
 #include<string>
 #include<vector>
 #include<ctime>
+#include <algorithm>
 #include"aliens.h"
 #include"humans.h"
 #include"loadAvengers.h"
@@ -16,6 +17,8 @@ class Question{
         void askColors();
         void askPowers();
         void showOptions();
+        void lost();
+        void checkWin();
     private:
         vector<Alien> alienOptions;
         vector<Human> humanOptions;
@@ -81,31 +84,90 @@ void Question::askLocation(){
     vector<string> posibleLocations;
     if(isHuman){
         for(int i=0;i<humanOptions.size();i++){
-            posibleLocations.push_back(humanOptions[i].getCountry());
+            string key = humanOptions[i].getCountry();
+            if (find(posibleLocations.begin(), posibleLocations.end(), key) == posibleLocations.end()) {
+                posibleLocations.push_back(key);
+            }
         }
     }else{
         for(int i=0;i<alienOptions.size();i++){
-            posibleLocations.push_back(alienOptions[i].getPlanet());
+            string key = alienOptions[i].getPlanet();
+            if (find(posibleLocations.begin(), posibleLocations.end(), key) == posibleLocations.end()) {
+                posibleLocations.push_back(key);
+            }
+        }        
+    }
+
+    int tries = 0, sel;
+    string location;
+    bool isLost = false;
+    while(sel!=1 && tries<posibleLocations.size()){
+        location = posibleLocations[tries];
+
+        cout<<tries+1<<".- ¿El Vengador proviene de "<<location<<"?";cin>>sel;
+        tries++;
+        if(tries>=posibleLocations.size()){
+            isLost = true;
         }
     }
-
-    cout<<"Posibles locaciones"<<endl;
-    for(int i=0;i<posibleLocations.size();i++){
-        cout<<posibleLocations[i]<<endl;
+    if(!isLost){
+        if(isHuman){
+            vector<Human> aux;
+            for(int i=0;i<humanOptions.size();i++){
+                if(humanOptions[i].getCountry()==location){
+                    aux.push_back(humanOptions[i]);
+                }
+            }
+            humanOptions = aux;
+        }else{
+            vector<Alien> aux;
+            for(int i=0;i<alienOptions.size();i++){
+                if(alienOptions[i].getPlanet()==location){
+                    aux.push_back(alienOptions[i]);
+                }
+            }
+            alienOptions = aux;
+        }
+        checkWin();
+    }else{
+        lost();
     }
-
 }
 
 void Question::showOptions(){
-    cout<<"Probables Vengadores al momento:\n";
+    cout<<"INVENTARIO:\n    (Probables Vengadores al momento)\n";
     if(isHuman){
         for(int i=0;i<humanOptions.size();i++){
-            cout<<"    "<<i+1<<".-"<<humanOptions[i].getAlias()<<endl;
+            cout<<"    "<<i+1<<".- "<<humanOptions[i].getAlias()<<endl;
         }
     }else{
         for(int i=0;i<alienOptions.size();i++){
-            cout<<"    "<<i+1<<".-"<<alienOptions[i].getAlias()<<endl;
+            cout<<"    "<<i+1<<".- "<<alienOptions[i].getAlias()<<endl;
         }
     }
     cout<<"\n\n";
+}
+
+void Question::checkWin(){
+    if(isHuman){
+        if(humanOptions.size()==1){
+            cout<<"\n\nEL VENGADOR EN EL QUE PIENSAS ES:\n";
+            humanOptions[0].show();
+        }else{
+            showOptions();
+            cout<<"\n\nPOR TERMINAR...";
+        }
+    }else{
+        if(alienOptions.size()==1){
+            cout<<"\n\nEL VENGADOR EN EL QUE PIENSAS ES:\n";
+            alienOptions[0].show();
+        }else{
+            showOptions();
+            cout<<"\n\nPOR TERMINAR...";
+        }
+    }
+}
+
+void Question::lost(){
+    cout<<"NO SE PUEDE ADIVINAR";
 }
