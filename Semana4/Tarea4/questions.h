@@ -169,5 +169,5 @@ void Question::checkWin(){
 }
 
 void Question::lost(){
-    cout<<"NO SE PUEDE ADIVINAR";
+    cout<<"NO SE PUEDE ADIVINAR\n";
 }
