@@ -11,6 +11,7 @@ class Human: public Avenger{
     public:
         Human();
         Human(string, string, char, string, vector<string>, vector<string>);
+        
         void show();
 
         void setCountry(string);

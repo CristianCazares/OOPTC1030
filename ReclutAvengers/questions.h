@@ -179,9 +179,9 @@ void Question::askPowers(){
     //Formular pregunta
     string strQuestion;
     if(options[0]->getGender()=='F'){
-        strQuestion = "===PREGUNTA\nTu heroina es famosa por tener ESPECIFICAMENTE ";
+        strQuestion = "\n===PREGUNTA\nTu heroina es famosa por tener ESPECIFICAMENTE ";
     }else{
-        strQuestion = "===PREGUNTA\nEl heroe que tienes en mente SE CARACTERIZA por tener ";
+        strQuestion = "\n===PREGUNTA\nEl heroe que tienes en mente SE CARACTERIZA por tener ";
     }
     
     vector<string> posiblePowers;
@@ -194,6 +194,7 @@ void Question::askPowers(){
             vector<string> powers = options[i]->getPowers();
             strPowers = powers[0] + ", " + powers[1] + " y " + powers[2];
             //Hacer pregunta
+            clear();
             cout<<strQuestion<<strPowers<<"?";cin>>sel;
             answer=options[i];
         }else if(sel==1){
@@ -257,8 +258,8 @@ bool Question::lost(){
     cout<<"|  | |  `--'  | |  |  |  |    |  |\\   | |  `--'  | |__|             |  '--'  | _ \n";
     cout<<"|__|  \\______/  |__|  |__|    |__| \\__|  \\______/  (__)             |_______/ (_)\n";
 
-    cout<<"No tengo ni idea de quien hablas!!!\n";
-    cout<<"Parece ser que no conozco a mis Vengadores...\n    O quiza TU no los conoces...\n";
+    cout<<"\n\n\nNo tengo ni idea de quien hablas!!!\n";
+    cout<<"Parece ser que no conozco a mis Vengadores...\n    O quiza TU no los conoces...\n\n\n";
     isLost = true;
     return false;
 }
