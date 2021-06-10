@@ -1,12 +1,12 @@
 #include<iostream>
 #include<string>
 #include<vector>
-#include<ctime>
-#include <algorithm>
+#include<stdlib.h>
 #include"aliens.h"
 #include"humans.h"
 #include"loadAvengers.h"
 using namespace std;
+
 
 class Question{
     public:
@@ -18,6 +18,7 @@ class Question{
         void askPowers();
         void showOptions();
         bool checkWin();
+        void clear();
 
         void win();
         bool lost();
@@ -178,15 +179,16 @@ void Question::askPowers(){
     //Formular pregunta
     string strQuestion;
     if(options[0]->getGender()=='F'){
-        strQuestion = "Tu heroina es famosa por tener ESPECIFICAMENTE ";
+        strQuestion = "===PREGUNTA\nTu heroina es famosa por tener ESPECIFICAMENTE ";
     }else{
-        strQuestion = "El heroe que tienes en mente SE CARACTERIZA por tener ";
+        strQuestion = "===PREGUNTA\nEl heroe que tienes en mente SE CARACTERIZA por tener ";
     }
     
     vector<string> posiblePowers;
     Avenger* answer;
     int sel = 0;
     for(int i=0;i<options.size();i++){
+        clear();
         if(sel!=1){
             string strPowers;
             vector<string> powers = options[i]->getPowers();
@@ -223,11 +225,43 @@ bool Question::checkWin(){
 }
 
 void Question::win(){
-        cout<<"Lo tengo... Tu vengador es..."<<endl;
-        options[0]->show();
+    clear();
+
+    cout<<"Lo tengo... Tu vengador es...\n\n";
+    cout<<"                    .   *        .       .	\n";
+    cout<<"       *      -0-				\n";
+    cout<<"          .                .  *       - )-	\n";
+    cout<<"       .      *       o       .       *		\n";
+    cout<<" o                |				\n";
+    cout<<"           .     -O-				\n";
+    cout<<".                 |        *      .     -0-	\n";
+    cout<<"       *  o     .    '       *      .        o	\n";
+    cout<<"     .       "<<options[0]->getAlias()<<"  .        |      *	\n";
+    cout<<"   *             *              -O-          .	\n";
+    cout<<"         .             *         |     ,	\n";
+    cout<<"   `            .           o			\n";
+    cout<<" 	*	.       `        ,   *		\n";
+    cout<<"       .  *            o       '		\n";
+    cout<<"	    *      `         ,         `    	\n";
+    cout<<"                 .                        *	\n";
+    cout<<"       *                 `     .       *		\n\n";
+
+    options[0]->show();
 }
 bool Question::lost(){
-    cout<<"Oh no! No tengo ni idea de quien hablas";
+    clear();
+    cout<<" __    ______    __    __     .__   __.   ______    __               _______     \n";
+    cout<<"(__)  /  __  \\  |  |  |  |    |  \\ |  |  /  __  \\  |  |             |       \\  _ \n";
+    cout<<"|  | |  |  |  | |  |__|  |    |   \\|  | |  |  |  | |  |             |  .--.  |(_)\n";
+    cout<<"|  | |  |  |  | |   __   |    |  . `  | |  |  |  | |  |             |  |  |  |   \n";
+    cout<<"|  | |  `--'  | |  |  |  |    |  |\\   | |  `--'  | |__|             |  '--'  | _ \n";
+    cout<<"|__|  \\______/  |__|  |__|    |__| \\__|  \\______/  (__)             |_______/ (_)\n";
+
+    cout<<"No tengo ni idea de quien hablas!!!\n";
+    cout<<"Parece ser que no conozco a mis Vengadores...\n    O quiza TU no los conoces...\n";
     isLost = true;
     return false;
+}
+void Question::clear(){
+    if (system("CLS")) system("clear");
 }
