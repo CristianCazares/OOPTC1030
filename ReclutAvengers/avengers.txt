@@ -1,0 +1,16 @@
+Raza,Nombre,Alias,Genero,Procedencia,Color1,Color2,Poder1,Poder2,Poder3
+H,Steve rogers,Capitain America,M,Estados Unidos,Azul,Rojo,Corazon Puro,Fuerza,Agilidad
+H,Anthony Stark,Iron Man,M,Estados Unidos,Rojo,Dorado,Vuelo,Fuerza,Inteligencia
+H,Clint Barton,Hawkeye,M,Estados Unidos,Azul,Rojo,Gran manejo de arco y flechas,Agilidad,Combate
+H,Bruce Banner,Hulk,M,Estados Unidos,Verde,Morado,Fuerza destructiva,Super salto,Gran resistencia
+H,Peter Parker,Spider-Man,M,Estados Unidos,Rojo,Azul,Trepamuros,Lanza telaranias,Fuerza
+A,Groot,Groot,M,Planeta X,Cafe,Verde,Extension de extremidades,Fuerza,Resistencia
+A,Loki Odinson,Loki,M,Asgard,Negro,Verde,Magia,Cambio de forma,Fuerza
+A,Thor Odinson,Thor,M,Asgard,Gris,Rojo,Control de rayos,Fuerza,Vuelo
+H,Natasha Romanoff,Black Widow,F,Rusia,Negro,Rojo,Agilidad,Combate,
+H,Hope Van Dyne,Wasp,F,Estados Unidos,Azul,Gris,Vuelo,Encogimiento,Control de insectos
+H,Wanda Maximoff,Scarlett Witch,F,Sokovia,Rojo,Negro,Magia,Vuelo,Telequinesis
+H,Aja-Adanna,Shuri,F,Wakanda,Azul,Cafe,Inteligencia extraordinaria,,
+H,Carol Danvers,Captain Marvel,F,Estados Unidos,Azul,Rojo,Fuerza,Vuelo,Manipulacion de energia
+A,Gamora Ben Titan,Gamora,F,Zen-Whoberi,Verde,Negro,Fuerza,Agilidad,Curacion
+A,Brunnhilde,Valkyrie,F,Asgard,Blanco,Dorado,Fuerza,Agilidad,Combate
